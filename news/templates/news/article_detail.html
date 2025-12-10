@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ article.title }} - Новости дня{% endblock %}
+
+{% block content %}
+    <article class="article-card">
+        <h1 style="margin-bottom: 1rem; color: #333;">{{ article.title }}</h1>
+        
+        <div style="white-space: pre-line; line-height: 1.8; margin-bottom: 2rem;">
+            {{ article.content }}
+        </div>
+        
+        <div class="article-meta" style="margin-top: 2rem;">
+            <p><strong>Автор:</strong> {{ article.author.get_full_name|default:article.author.username }}</p>
+            <p><strong>Опубликовано:</strong> {{ article.created_at|date:"d.m.Y в H:i" }}</p>
+            {% if article.updated_at != article.created_at %}
+                <p><strong>Обновлено:</strong> {{ article.updated_at|date:"d.m.Y в H:i" }}</p>
+            {% endif %}
+        </div>
+        
+        <div style="margin-top: 2rem;">
+            <a href="{% url 'article_list' %}" style="color: #667eea; text-decoration: none;">
+                ← Вернуться к списку новостей
+            </a>
+        </div>
+    </article>
+{% endblock %}
