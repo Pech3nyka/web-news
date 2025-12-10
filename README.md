@@ -30,28 +30,38 @@ cd web-news
 ```
 
 # Создайте файл .env из шаблона
+```bash
 cp .env.example .env
-
+```
 # Отредактируйте .env при необходимости
+```bash
 nano .env  # или используйте любой текстовый редактор
-
+```
 # Создайте файл .env из шаблона
+```bash
 cp .env.example .env
-
+```
 # Отредактируйте .env при необходимости
+```bash
 nano .env  # или используйте любой текстовый редактор
-
+```
 # Используйте uv
+```bash
 uv sync
-
+```
 # Или используйте pip
+```bash
 pip install django python-dotenv
-
+```
 # Примените миграции
+```bash
 python manage.py migrate
-
+```
 # Создайте администратора
+```bash
 python manage.py createsuperuser
+```
 # Следуйте инструкциям в терминале
-
+```bash
 python manage.py runserver
+```
